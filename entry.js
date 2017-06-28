@@ -5,18 +5,20 @@ window.REM=document.documentElement.clientWidth;
 document.documentElement.style.fontSize = window.REM + 'px';
 
 /*import packages needed*/
-import '../css/main.less'
+import './css/main.less'
 import Vue from 'vue'
 import VueTouch from 'vue-touch'
-import router from './router'
-import store from './store'
-import app from '../component/app.vue'
+import router from './route/router'
+import store from './store/store'
+import app from './component/app.vue'
 
 Vue.use(VueTouch, {name:'touch'})
 
-new Vue({
-    el: '#body',
-    store,
-    router,
-    render: h => h(app)
-})
+export function createApp () {
+    const App = new Vue({
+        store,
+        router,
+        render: h => h(app)
+    })
+    return  { App,router,store }
+}

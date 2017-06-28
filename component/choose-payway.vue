@@ -31,9 +31,9 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import store,{mapState} from '../js/store'
-    import router from '../js/router'
-    import {msTip} from '../library/common'
+    import store,{mapState} from '../store/store'
+    import router from '../route/router'
+    import {msTip} from '../js/common'
     export default {
         data(){
             return {

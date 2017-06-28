@@ -47,8 +47,8 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import store,{mapState} from '../js/store'
-    import router from '../js/router'
+    import store,{mapState} from '../store/store'
+    import router from '../route/router'
     export default {
         computed:mapState(['HosName','chooseDepart','chooseHosArea','patientDetail']),
         mounted(){

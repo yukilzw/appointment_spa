@@ -55,10 +55,10 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import scroll from '../library/iscroll'
-    import store,{mapState} from '../js/store'
-    import router from '../js/router'
-    import {msTip} from '../library/common'
+    import scroll from '../js/iscroll'
+    import store,{mapState} from '../store/store'
+    import router from '../route/router'
+    import {msTip} from '../js/common'
     let iScroll;
     export default {
         data(){

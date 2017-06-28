@@ -7,10 +7,10 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const compiler = webpack({
     entry:{
         vue: ["vue", "vue-touch","vuex","vue-router"],
-        main : ["./js/entry.js"]
+        main : ["./entry-client.js"]
     },
     output:{
-        path: path.resolve(__dirname, "./app-dist"),
+        path: path.resolve(__dirname, "./client-dist"),
         filename:"min.js"
     },
     module:{
@@ -26,7 +26,7 @@ const compiler = webpack({
             },
             {
                 test:/\.js$/,
-                include:[path.resolve(__dirname, "./js")],
+                include:[path.resolve(__dirname, "./")],
                 loader:"babel-loader",
                 options: {
                     presets: ['es2015',"stage-0"]
@@ -58,8 +58,8 @@ const compiler = webpack({
         new HtmlWebpackPlugin({             //生成HTML
             title:'医依帮-智慧医院',
             ico:'xy.ico',
-            template:'./entry.html',
-            filename:'./dist.html',
+            template:'./client-template.html',
+            filename:'./index.html',
             inject:'body',
             minify:{
                /*minifyJS : true,
