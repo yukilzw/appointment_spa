@@ -1,0 +1,18 @@
+/*set pixel ratio according to the design draft*/
+@baseFontSize: 750;
+.px(@name,@a){
+    @{name}: @a / @baseFontSize * 1rem
+}
+.px2(@name,@a,@b){
+    @{name}: (@a / @baseFontSize * 1rem) (@b / @baseFontSize * 1rem)
+}
+.px3(@name,@a,@b,@c){
+    @{name}: (@a / @baseFontSize * 1rem) (@b / @baseFontSize * 1rem) (@c / @baseFontSize * 1rem)
+}
+.px4(@name,@a,@b,@c,@d){
+    @{name}: (@a / @baseFontSize * 1rem) (@b / @baseFontSize * 1rem) (@c / @baseFontSize * 1rem) (@d / @baseFontSize * 1rem)
+}
+@color-line:#e9e9e9;
+@color1:#7dd6d3;
+//@color2:#24c5ec;
+@color-un:#aeb1b1;

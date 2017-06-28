@@ -1,0 +1,81 @@
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,li, dl, dt, dd, form, a, fieldset, input, th, td,textarea{margin: 0; padding: 0; border: 0; outline:none; font-family:Arial,"微软雅黑"; text-decoration:none}
+*{box-sizing: border-box;}
+ul,ol,li{list-style: none;color: #333333}
+b,i{ font-style:normal; font-weight:normal}
+body{ overflow-x:hidden;background-color:#f0f0f0}
+html,body{height: 100%}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+
+@import "./base";
+
+@media screen and (min-width: 501px){   //iPad
+  *,.m-f{font-size: 19px;}
+  .n-f{font-size: 21px;}
+  .b-f{font-size: 23px;}
+  .l-f{font-size: 26px;}
+}
+@media screen and (max-width: 500px){   //bigPhone
+  *,.m-f{font-size: 15px;}
+  .n-f{font-size: 17px;}
+  .b-f{font-size: 19px;}
+  .l-f{font-size: 21px;}
+}
+@media screen and (max-width: 375px){   //normalPhone
+  *,.m-f{font-size: 14px;}
+  .n-f{font-size: 16px;}
+  .b-f{font-size: 18px;}
+  .l-f{font-size: 20px;}
+}
+@media screen and (max-width: 320px){   //smallPhone
+  *,.m-f{font-size: 13px;}
+  .n-f{font-size: 15px;}
+  .b-f{font-size: 17px;}
+  .l-f{font-size: 19px;}
+}
+
+header{
+  .px(height,120);
+  text-align: center;
+  .px(line-height,120);
+  border-bottom: 1px solid @color-line;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.page{
+  height: 100%;
+}
+.page-wrapper{
+  width: 100%;
+  position: absolute;
+  .px(top,120);
+  bottom: 0;
+}
+.page-back{
+  display:block;
+  .px(height,120);
+  .px(width,120);
+  position:absolute;;
+  background:url("../img/page-back.png")no-repeat left 40/750*1rem center;
+  background-size: auto 42%;
+}
+.bottom{
+  display: block;
+  width: 70%;
+  .px(height,80);
+  .px(line-height,80);
+  text-align: center;
+  color: white;
+  background-color: @color1;
+  .px(border-radius,15);
+  position: absolute;
+  left:15%;
+  .px(bottom,30);
+}
+
+@keyframes msTip{
+  0% { transform:translate3d(0,0,0)}
+  62% { transform:translate3d(0,270/750 * 1rem,0)}
+  100% { transform:translate3d(0,270/750 * 1rem,0)}
+}
