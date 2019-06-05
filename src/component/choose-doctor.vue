@@ -55,7 +55,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import scroll from '../js/iscroll'
+    import scroll from 'iscroll'
     import store,{mapState} from '../store/store'
     import router from '../route/router'
     import {msTip} from '../js/common'

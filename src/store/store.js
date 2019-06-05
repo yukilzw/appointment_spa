@@ -150,7 +150,7 @@ const store = new Vuex.Store({
             state.patientDetail.docName = state[obj.type][obj.index].name;
             state.patientDetail.pay = data.pay;
             state.patientDetail.time = + date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+' ' +data.time;
-            state.patientList.forEach((val,inx)=>{
+            state.patientList.forEach((val)=>{
                 if(val.d==1)state.patientDetail.patientName=val.name;
             })
         },

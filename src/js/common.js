@@ -8,7 +8,7 @@ function px(val){
 function getUrl(string) {
     var obj = new Object();
     if (string.indexOf("?") != -1) {
-        var string = string.substr(string.indexOf("?") + 1);
+        string = string.substr(string.indexOf("?") + 1);
         var strs = string.split("&");
         for (var i = 0; i < strs.length; i++) {
             var tempArr = strs[i].split("=");
