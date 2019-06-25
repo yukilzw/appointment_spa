@@ -5,7 +5,7 @@
         </header>
         <div class="page-wrapper">
             <ul id="detail-wrapper">
-                <touch class="li" v-for="(people,i) in patientList" :class="{active:people.d}" @tap="pageBack(people.name,i)">
+                <touch class="li" v-bind:key="i" v-for="(people,i) in patientList" :class="{active:people.d}" @tap="pageBack(people.name,i)">
                     <p>{{people.name}}</p>
                     <div><span></span></div>
                 </touch>
@@ -15,19 +15,19 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import store,{mapState} from '../store/store'
-    import router from '../route/router'
+    import store, { mapState } from '../store/store';
+    import router from '../route/router';
     export default {
-        computed:mapState(['patientList']),
-        methods:{
-            pageBack(people,i){
-                if(people && i){
-                    store.commit('setPatientDetailName',{
-                        people:people,
-                        i:i
-                    })
+        computed: mapState(['patientList']),
+        methods: {
+            pageBack(people, i) {
+                if(people && i) {
+                    store.commit('setPatientDetailName', {
+                        people: people,
+                        i: i
+                    });
                 }
-                router.go(-1)
+                router.go(-1);
             }
         }
     }

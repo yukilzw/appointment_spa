@@ -31,29 +31,29 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import store,{mapState} from '../store/store'
-    import router from '../route/router'
-    import {msTip} from '../js/common'
+    import store, { mapState } from '../store/store';
+    import router from '../route/router';
+    import { msTip } from '../js/common';
     export default {
-        data(){
+        data() {
             return {
-                wayActive:[1,0]
-            }
+                wayActive: [1, 0]
+            };
         },
-        computed:mapState(['patientDetail']),
-        methods:{
-            changePayWay(i){
-                this.wayActive=[0,0];
-                this.wayActive[i]=1;
+        computed: mapState(['patientDetail']),
+        methods: {
+            changePayWay(i) {
+                this.wayActive = [0, 0];
+                this.wayActive[i] = 1;
             },
-            pageBack(){
-                router.go(-1)
+            pageBack() {
+                router.go(-1);
             },
-            pageGo(){
-                router.push({ path: '', query: { } })
+            pageGo() {
+                router.push({ path: '', query: { } });
             },
-            msTip(text){
-                msTip(text)
+            msTip(text) {
+                msTip(text);
             }
         }
     }

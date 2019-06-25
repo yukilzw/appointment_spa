@@ -47,26 +47,26 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import store,{mapState} from '../store/store'
-    import router from '../route/router'
+    import store, { mapState } from '../store/store';
+    import router from '../route/router';
     export default {
-        computed:mapState(['HosName','chooseDepart','chooseHosArea','patientDetail']),
-        mounted(){
-            this.$nextTick(()=>{
-                let h3_width = document.getElementsByTagName('h3')[0].offsetWidth,
-                        li_width = (650/750)*window.REM,
-                        p = document.getElementsByTagName('p');
-                for(let i=0;i<p.length;i++){
-                    p[i].style.width=li_width-h3_width-10+'px';
+        computed: mapState(['HosName', 'chooseDepart', 'chooseHosArea', 'patientDetail']),
+        mounted() {
+            this.$nextTick(() => {
+                const h3_width = document.getElementsByTagName('h3')[0].offsetWidth;
+                const li_width = (650 / 750) * window.REM;
+                const p = document.getElementsByTagName('p');
+                for (let i = 0; i < p.length; i++) {
+                    p[i].style.width = li_width - h3_width - 10 + 'px';
                 }
-            })
+            });
         },
-        methods:{
-            pageBack(){
-                router.go(-1)
+        methods: {
+            pageBack() {
+                router.go(-1);
             },
-            pageGo(path){
-                router.push({ path: path, query: { } })
+            pageGo(path) {
+                router.push({ path, query: { } });
             }
         }
     }

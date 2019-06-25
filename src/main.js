@@ -1,4 +1,5 @@
-import { createApp } from './entry'
+import { createApp } from './entry';
 
-const { App } = createApp()
-App.$mount('#app')
+const { App } = createApp();
+
+App.$mount('#app');

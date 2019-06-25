@@ -3,45 +3,45 @@
     <header class="l-f">选择科室</header>
     <div class="page-wrapper">
         <ul>
-            <touch class="choose n-f" v-on:tap="changeDepart(inx,item)" v-for="(item,inx) in departChoose" :class="{active:isActive[inx]}">{{item}}</touch>
+            <touch v-bind:key="inx" class="choose n-f" v-on:tap="changeDepart(inx,item)" v-for="(item,inx) in departChoose" :class="{active:isActive[inx]}">{{item}}</touch>
         </ul>
         <div class="page-detail-wrapper">
-            <touch class="page-detail n-t" v-for="n in departName" @tap="pageGo(n)">{{n}}</touch>
+            <touch v-bind:key="n" class="page-detail n-t" v-for="n in departName" @tap="pageGo(n)">{{n}}</touch>
         </div>
     </div>
 </div>
 </template>
 
 <script type="text/ecmascript-6">
-    import store,{ mapState } from '../store/store'
-    import router from '../route/router'
+    import store, { mapState } from '../store/store';
+    import router from '../route/router';
     export default {
-        data(){
+        data() {
             return {
-                isActive:[1,0,0,0]
-            }
+                isActive: [1, 0, 0, 0]
+            };
         },
         computed:{
             departName () {
-                return store.state.departName
+                return store.state.departName;
             },
-            departChoose(){
-                return store.state.departChoose
+            departChoose() {
+                return store.state.departChoose;
             }
         },
         methods:{
-            changeDepart (inx,item) {
-                this.isActive.forEach( (val,i,arr)=> arr[i]=0 );
-                this.isActive[inx]=1;
-                store.commit('changeDepart',{
-                    chooseHosArea:item
-                })
+            changeDepart (inx, item) {
+                this.isActive.forEach((val, i, arr) => arr[i] = 0 );
+                this.isActive[inx] = 1;
+                store.commit('changeDepart', {
+                    chooseHosArea: item
+                });
             },
-            pageGo (n){
-                store.commit('setChooseDepart',{
-                    chooseDepart:n
-                })
-                router.push({ path: 'chooseDoctor', query: { } })
+            pageGo(n) {
+                store.commit('setChooseDepart', {
+                    chooseDepart: n
+                });
+                router.push({ path: 'chooseDoctor', query: { } });
             }
         }
     }
